@@ -1,0 +1,7 @@
+# Qwen 3.5 4B for opencode's agent loop. Ollama's default context is far too short for an
+# agent: the system prompt plus tool definitions alone fill it, and tool calls then fail.
+# Build with:  ollama create qwen3.5-4b-coder -f ~/.config/opencode/Modelfile
+FROM qwen3.5:4b
+PARAMETER num_ctx 32768
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
